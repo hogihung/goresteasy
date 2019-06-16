@@ -15,7 +15,7 @@ This docker image contains the following development tools:
 ```
 cd /path/to/your/docker/projects
 git clone https://github.com/hogihung/goresteasy.git
-cd vergunt
+cd goresteasy
 ```
 
 
@@ -39,7 +39,7 @@ docker run -it --name=godev --hostname=devbox --rm [image-id]
 
 # Running the image and mounting your local file system into the container:
 docker run -it --name=godev --hostname=devbox --rm \
--v /path/to/local/dir:/usr/local/development/dir  [image-id]
+-v /path/to/local/dir:/usr/local/development/go/  [image-id]
 
 *Note: Windows uses need to replace the \ character with the ^ character when
        spanning multiple lines.
@@ -53,6 +53,6 @@ docker run -it --name=godev --hostname=devbox --rm \
 docker commit --message "some message here" [running-container-id] hub-repo-name/image-name:x.y.z
 
 # Example:
-docker commit --message "Fix elixir_go and reset_path scripts" vergunt-dev hogihung/goresteasy:1.0.1
+docker commit --message "Fix elixir_go and reset_path scripts" resteasy-dev hogihung/goresteasy:1.0.1
 ```
 
